@@ -3,9 +3,7 @@ import "./App.css";
 
 function App() {
   const [valor, setValor] = useState("");
-
-
-
+  
   return (
     <div className="caixa">
       <div className="calculadora">
