@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [valor, setValor] = useState("");
+
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="caixa">
+      <div className="calculadora">
+        <form action="">
+          <div className="tela">
+            <input type="text" name="" id="" value={valor}/>
+          </div>
+          <div>
+            <input type="button" value="AC" name="" id="" onClick={e => setValor("")}/>
+            <input type="button" value="DE" name="" id="" onClick={e => setValor(valor.slice(0, -1))}/>
+            <input type="button" value="." name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="/" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+          </div>
+          <div>
+            <input type="button" value="7" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="8" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="9" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="*" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+          </div>
+          <div>
+            <input type="button" value="4" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="5" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="6" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="+" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+          </div>
+          <div>
+            <input type="button" value="1" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="2" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="3" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="-" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+          </div>
+          <div>
+            <input type="button" value="00" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input type="button" value="0" name="" id="" onClick={e => setValor(valor + e.target.value)}/>
+            <input className="igual" type="button" value="=" name="" id="" onClick={e => setValor(eval(valor))}/>
+          </div>
+        </form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
